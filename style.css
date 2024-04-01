@@ -1,0 +1,316 @@
+*{
+    font-family: "Noto Sans KR", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+
+    list-style: none; /*list에서 점 없애는 기능*/
+    text-decoration: none; /*링크에서 색깔,밑줄 없애는 기능을 함*/
+    border-collapse: collapse;
+    margin: 0;
+    padding: 0;
+    color: #000;
+    
+}
+h1{
+    font-size: 48px;
+    font-weight: lighter;
+}
+.contents_l{
+    font-size: 20px;
+}
+.contents_s{
+    font-size: 24px;
+}
+
+.contents1_bold{
+    font-size: 18px;
+    font-weight: bold;
+}
+.contents_light{
+    font-size: 14px;
+    font-weight: 300;
+}
+
+/* ---- */
+
+
+
+
+.intro_bg{
+    background-image: url("images/intro.png");
+    width: 100%;
+    height: 718px;
+}
+.header{
+    display: flex;
+    width: 1280px;
+    margin: auto;
+    height: 86px;
+}
+.search_area{
+   
+    width: 300px;
+    height: 40px;
+    border-radius: 5px;
+    margin-top: 24px;
+    background-color: rgba(0,0,0,0.5);
+}
+.search_area form input{
+    border: none;
+    width: 250px;
+    height: 40px;
+    background: rgba(0,0,0,0);
+    color: #fff;
+    border-left: 10px;
+}
+
+.search_area form span{
+    width: 50px;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+
+}
+
+.nav{
+    display: flex;
+    width: calc(1280px - 300px);
+    justify-content: flex-end;
+    line-height: 86px; /*전체 칸의 크기가 86px일때 line-height: 86px로 만들면 텍스트들이 중간으로 온다.*/
+    
+}
+.nav li{
+    margin-left: 84px;
+   
+}
+.nav li a{
+    color: #fff;
+} /*글자색은 부모로 부터 상속되지 않으니 정확한 선택자를 지정해줘야함.*/
+
+.intro_text{
+    
+    width: 100%;
+    margin: 231px auto 231px auto;/*상 우 하 좌 순서로 입력*/
+    text-align: center;
+
+}
+.intro_text h1,h4{
+    color:white
+}
+    /*position:relative 는 현재 좌표를 기준으로 움직이고
+    position:absolute는 전체 좌표평면계를 기준으로 움직인다.
+    position:fixed 는 화면에 보이는 브라우저를 기준으로 고정된다.(만약 왼쪽위에 위치를 잡아놨다면, 스크롤을 내려도 항상 똑같은 위치에 있도록 만든다.)*/
+.amount{
+    position: relative;
+    top: -66px;
+    display: flex;
+    width: 1280px;
+    margin: auto;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+   
+}
+.amount li{
+    flex: 1; /*여기서만 flex:auto가 적용되는 이유는 부모코드에서 display: flex; 입력했기 때문이다. div의 부모는 li이기 때문에 flex:auto가 동작하지 않았던 것이다.*/
+    height: 132px;
+    background-color: white; 
+
+}
+.amount li div{
+    text-align: center;
+    
+    height: 57px;
+    margin-top: 37px;
+}
+
+.amount li:not(:last-child) div{ /*li의 마지막 요소 의 div만 빼고 border-right: 1px solid gray; 를 적용 시킴*/
+    border-right: 1px solid #E1E1E1;
+}
+
+/*main_text0*/
+
+.main_text0{
+    width:100%;
+    height: 601px;
+    background-color: #f1f2f3;
+    margin-top: -132px; 
+    
+    /* 위에서 amount는 position을 사용해서 위로 당겨 주었다. 
+    하지만 여기서는 margin-top을 사용해서 위로 당겼다. 
+    둘이 똑같아 보이지만 차이점이 있다. 
+    position을 이용해서 위로 당기면 실제로 당긴 것이 아니라 
+    당긴 것 처럼 보이는 것이다. 객체는 사실 원래 위치에 존재하지만 
+    위로 당긴 것처럼 보이도록 만드는 것이다. 
+    하지만 margin-top은 객체를 실제로 위로 올린다. 
+    우리는 아래에 사용할 객체들이 많기 때문에 margin-top을 사용했다. 
+    만약 position을 사용해서 객체를 위로 올렸다면, 아래에 나오는 객체들을 모두 
+    position을 이용해서 번거롭게 위치조정을 해야했을 것이다.
+    하지만 margin-top을 사용했으니, 이번 객체의 위치만 조정하면 아래의 객체들은 
+    위치가 굿굿이다. */
+}
+.main_text0 h1{
+    text-align: center; 
+    padding-top: 116px;/*여기서 margin-top으로 처리를 하면 안되는 이유는 
+    margin의 정의는 다른 객체와의 거리다. 그러니까 위에있는 객체와의 거리가 멀어지게 되면서 
+    디자인이 마음대로 안된다. padding 으로 처리하는 방법은 객체 안에서 텍스트와 객체 상단의
+    거리를 멀어지게 하기 때문에 padding-top으로 처리하는 것이 좋은 방법이다. 
+    이때 원래 객체의 높이보다 padding-top을 많이 줘버리면 객체의 높이가 padding-top만큼 높아진다.*/
+   
+}
+
+
+.main_text0 .contents_l{
+    text-align: center;
+    
+}
+.icons{
+    width: 1280px;
+    
+    display: flex;
+    margin: auto; /*margin: auto;는 가로축 정렬 align-items:center는 세로축 정렬이고, align-items:center 는 부모에 display:flex를 설정해줘야 함*/
+    
+}
+
+.icons li{
+    height: 302px;
+    flex: 1;
+    background-color: white;
+    margin-top: 49px;
+    text-align: center; /*li에 text-align: center를 해주면 나머지 요소들은 자동으로 중앙정렬이 되서 요소 하나하나에 text-align: center를 해줄 필요가 없다. text-align: center는 이미지에도 적용된다. 하지만 부모 요소에 text-align: center했을 때만 되고 img태그 자체에 text-align: center 해버리면 적용x */
+
+}
+
+.icons li:not(:last-child){ /*not쓸때 주의 할 점은 내가 적용하고 싶은 객체에 not을 붙여야 한다는 것. icons li:not(:last-child)의 의미는 icons 마지막 li요소만 빼고 적용시킨다는 의미다.*/
+    margin-right: 20px;
+}
+
+.icons li .icon_img{
+    margin-top: 18px;
+}
+
+.icons li .contents_light{
+    width: 240px;
+    margin: auto;
+}
+
+
+
+.icons li .more{
+    width: 100px;
+    height: 30px;
+    background-color: #2F7AF4;
+    color: white;
+    margin: auto;
+    line-height: 30px; /*line-height는 글자가 위치한 높이를 바꿔준다. font-size를 바꾸진 않는다.*/
+    font-size: 12px;
+    margin-top: 25px;
+
+}
+
+/* main_text1------------- */
+
+
+.main_text1{
+    width: 100%;
+    height: 659px;
+}   
+.main_text1 h1{
+    text-align: center;
+    padding-top: 50px;
+}
+
+.main_text1 .contents_l{
+    text-align: center;
+}
+/* 아래에 나올 요소는  text-align: center; 를 먹이면 안되서 부모요소에 text-align: center;하지 않고 각각 필요한 부분에만 text-align: center; 해줌.*/
+
+.service{
+    width: 1280px;
+    height: 427px;
+    display: flex;
+    margin: 49px auto; /*상하 49px 좌우 auto*/
+    
+}
+
+.sub_text0{
+    padding-left: 20px;
+}
+
+.sub_text1{
+    padding-top: 27px;
+}
+
+
+/* main_text2------------- */
+
+
+.main_text2{
+    width: 100%;
+    height: 418px;
+    background-color: skyblue;
+    background-image: url(images/contact.png);
+    background-size: cover; /*이미지가 너무 커서 화면 크기에 맞게 이미지가 조정되도록 만듦*/
+    
+}
+.main_text2 ul{
+    display: flex;
+    padding-top: 138px; /*자식들이 모두 효과를 받아야 되면 부모태그에 쓴다.*/
+}
+
+.main_text2 ul li
+{
+    
+    flex: 1;
+    text-align: center;
+}
+
+.main_text2 h1{
+    font-size: 48px;
+    font-weight: 200;
+    color: #fff;
+}
+
+.main_text2 .contents_l{
+    font-weight: 300;
+    color: #fff;
+   
+}
+
+.main_text2 .more{
+    width: 220px;
+    height: 40px;
+    line-height: 40px; /*height가 40px일때 line-height를 40px로 하면 글자 상하 위치가 중앙으로 온다.*/
+    margin: auto;
+    border: #fff solid 1px;
+    color: #fff;
+    cursor: pointer; /*버튼 '처럼' 만들어 준다 실제 input이 되는 버튼은 아님 */
+    margin-top: 15px;
+}
+
+footer{
+    width: 100%;
+    height: 244px;
+    background-color: #1F1F1F;
+    display: flex;
+    
+}
+
+footer div:first-child{
+    flex: 4; /*flex의 모든 영역의 합은 12이다. 좌측 영역에 3주고 우측에 9줌.*/
+    text-align: center;
+    color: #fff;
+    padding-top: 94px;
+    font-size: 48px;
+    font-weight: 200;
+}
+
+footer div:last-child{
+    flex:8;
+    text-align: left;
+    color: #fff;
+    padding-top: 70px;
+    font-weight: bold;
+    font-size: 20px;
+    
+}
+
